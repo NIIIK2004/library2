@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <title>Профиль</title>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header__wrapper">
+            <img src="/images/logo.svg" alt="">
+            <a th:href="@{/logout}">Выйти из аккаунта</a>
+        </div>
+    </div>
+</header>
+<div class="section_profile">
+    <div class="container">
+        <div class="profile__wrapper" th:object="${user}">
+            <section class="list__inner">
+                <h1 class="title">Список всех книг</h1>
+                <ul>
+                    <li th:each="book : ${books}">
+                        <div class="block">
+                            <p class="book-id" th:text="${book.id}"></p>
+                        </div>
+                        <h2 th:text="${book.title}"></h2>
+                        <p class="author-book" th:text="${book.author}"></p>
+                        <span th:text="${book.genre}"></span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="list__inner" style="margin-top: 50px;">
+                <h1 class="title">Список ваших книг</h1>
+                <ul>
+                    <li th:each="book : ${userBooks}">
+                        <div class="block">
+                            <p class="book-id" th:text="${book.id}"></p>
+                        </div>
+                        <h2 th:text="${book.title}"></h2>
+                        <p class="author-book" th:text="${book.author}"></p>
+                        <span th:text="${book.genre}"></span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="list__inner" style="margin-top: 50px;">
+            </section>
+            <a class="add-book-btn" th:href="@{/profile/add}">Добавить книгу</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

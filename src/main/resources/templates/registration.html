@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <title>Регистрация</title>
+</head>
+<body>
+<section class="section_registration">
+    <div class="container">
+        <img class="logo" th:src="@{/images/logo.svg}" alt="logo">
+        <div class="registration__wrapper">
+            <h1 class="title">Регистрация</h1>
+            <form method="POST" class="auth__form" th:action="@{/registration/save}" th:object="${user}">
+
+                <div class="width-form">
+                    <div style="width: 804px;">
+                        <input type="email" id="email" th:field="*{email}" placeholder="Адрес электронной почты">
+                    </div>
+
+                    <div class="auth__form-inner">
+                        <input type="text" id="username" th:field="*{username}"
+                               placeholder="Придумайте логин">
+                        <input type="password" id="password" th:field="*{password}"
+                               placeholder="Придумайте пароль">
+                    </div>
+
+                    <div class="auth__form-inner">
+                        <input type="text" id="name" th:field="*{name}" placeholder="Введите ФИО">
+                        <input type="number" id="tel" th:field="*{number}" placeholder="Введите номер телефона">
+                    </div>
+                </div>
+
+                <div class="error">
+                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                    <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+                    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                    <span th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></span>
+                </div>
+
+                <div class="auth__form-send">
+                    <a th:href="@{/login}">Имеете аккаунт? Войдите!</a>
+                    <button class="auth_button" type="submit">Зарегистрироваться</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>

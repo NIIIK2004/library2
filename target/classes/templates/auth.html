@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <title>Авторизация</title>
+</head>
+<body>
+<section class="section_registration">
+    <div class="container">
+        <img class="logo" th:src="@{/images/logo.svg}" alt="logo">
+        <div class="registration__wrapper" style="height: 351px;">
+            <h1 class="title">Регистрация</h1>
+            <form method="POST" class="auth__form" th:action="@{/login}">
+
+                <div class="width-form">
+                    <div style="width: 804px; display: flex; flex-direction: column; gap: 10px">
+                        <input type="text" id="username" name="username" placeholder="Тут нужно вводить username свой">
+                        <input type="password" id="password" name="password" placeholder="Помните свой пароль?">
+                    </div>
+                </div>
+                <div class="auth__form-send">
+                    <a th:href="@{/registration}">Нет аккаунта? Зарегистрируйтесь!</a>
+                    <button class="auth_button" type="submit">Войти</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>

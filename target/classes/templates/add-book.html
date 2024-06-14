@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <title>Создание книги</title>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header__wrapper">
+            <img src="/images/logo.svg" alt="">
+            <a th:href="@{/logout}">Выйти из аккаунта</a>
+        </div>
+    </div>
+</header>
+<div class="section_profile">
+    <div class="container">
+        <div class="profile__wrapper" th:object="${user}" style="overflow: hidden;">
+            <section class="list__inner">
+                <h1 class="title">Добавление книги на рынок</h1>
+                <form method="POST" th:action="@{/profile/add}">
+                    <img class="decor" th:src="@{/images/addBook.svg}" alt="">
+                    <div class="form-add-book">
+                        <div class="block" style="width: 255px; height: 318px">
+                            <p class="book-id">ID Книги</p>
+                        </div>
+                        <input class="form-add-book-title" type="text" id="title" name="title" placeholder="Название:">
+                        <input class="form-add-book-author" type="text" id="author" name="author" placeholder="Автор:">
+                        <input class="form-add-book-genre" type="text" id="genre" name="genre" placeholder="Жанр:">
+                    </div>
+                    <button class="create-book-btn" type="submit">Сохранить</button>
+
+                </form>
+            </section>
+
+            <section class="list__inner" style="margin-top: 50px;">
+            </section>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

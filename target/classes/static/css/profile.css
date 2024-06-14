@@ -1,0 +1,168 @@
+ul {
+    list-style: none;
+}
+
+.header__wrapper {
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img {
+    width: 210px;
+}
+
+.header a {
+    border: 1px solid #E73E3E;
+    border-radius: 60px;
+    padding: 20px 25px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #E73E3E;
+    transition: all .5s;
+}
+
+.header a:hover {
+    color: white;
+    border: 1px solid transparent;
+    background: #E73E3E;
+}
+
+.profile__wrapper {
+    padding: 50px 50px 0 50px;
+    border-radius: 30px;
+    height: 680px;
+    background: linear-gradient(135deg, #f0f0f0 0%, #efefef 100%);
+    position: relative;
+    overflow: auto;
+}
+
+.list__inner ul {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+}
+
+.block {
+    border-radius: 18px;
+    width: 174px;
+    height: 217px;
+    background: #e1e1e1;
+    position: relative;
+}
+
+.book-id {
+    font-weight: 700;
+    font-size: 43px;
+    color: #545454;
+    position: absolute;
+    inset: 18px;
+}
+
+.list__inner ul li {
+    padding: 10px;
+    transition: all .4s;
+    border: 1px solid transparent;
+    border-radius: 18px;
+}
+
+.list__inner ul li:hover {
+    border: 1px solid #ADADAD;
+}
+
+.list__inner ul li h2 {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+}
+
+.author-book {
+    margin-top: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000;
+}
+
+.list__inner ul li span {
+    display: block;
+    margin-top: 3px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #888;
+}
+
+.create-book-btn,
+.add-book-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 60px;
+    padding: 20px 25px;
+    background: #E73E3E;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    transition: all .4s;
+    border: 1px solid transparent;
+}
+
+.create-book-btn {
+    position: absolute;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.create-book-btn:hover,
+.add-book-btn:hover {
+    background: transparent;
+    border: 1px solid #E73E3E;
+    color: #E73E3E;
+}
+
+.form-add-book {
+    border: 1px solid #ADADAD;
+    padding: 15px;
+    border-radius: 30px;
+    width: 254px;
+    margin: 50px auto 0;
+    position: relative;
+    z-index: 999;
+}
+
+.decor {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-add-book input {
+    border: 1px solid transparent;
+    background: transparent;
+    padding: 5px 0;
+}
+
+.form-add-book-title {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 24px;
+    color: #000;
+}
+
+.form-add-book-author {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 21px;
+    color: #000;
+}
+
+.form-add-book-genre {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 17px;
+    color: #888;
+}

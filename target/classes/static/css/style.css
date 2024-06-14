@@ -1,0 +1,18 @@
+body {
+    background: #FFF;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+}
+
+.container {
+    max-width: 1274px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    color: #000;
+}
