@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.security.core.Authentication;
 
 import java.security.Principal;
 import java.util.List;
@@ -51,9 +52,12 @@ public class BookController {
     }
 
     @GetMapping("/add")
-    public String addBookForm(Model model) {
-        model.addAttribute("book", new Book());
-        return "add-book";
+    public String addBookForm(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            model.addAttribute("book", new Book());
+            return "add-book";
+        }
+        return "redirect:/login";
     }
 
     @PostMapping("/add")

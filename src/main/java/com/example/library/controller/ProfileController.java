@@ -19,12 +19,13 @@ import java.security.Principal;
 public class ProfileController {
     private final UserImpl userImpl;
     private final UserRepo userRepo;
+
     @GetMapping("/")
     public String home(Authentication authentication) {
         if (authentication != null && authentication.isAuthenticated()) {
-            return "redirect:/profile";
+            return "profile";
         }
-        return "profile";
+        return "redirect:/login";
     }
 
 //    @GetMapping("/profile")
